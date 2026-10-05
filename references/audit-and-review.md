@@ -40,6 +40,12 @@ revision loop.
 7. **Lead-verified minimum.** The lead personally re-checks the page limit,
    headers, anonymity, AI disclosure placement, and at least the headline
    numbers before issuing the consolidated report.
+8. **Artifact integrity.** Record a hash manifest of the audited sources, the
+   result packet, and the built PDF before the audit starts, and re-check it
+   before the report is issued. Any file whose hash changed during the audit is
+   an integrity finding: name the file, what changed, and which claim it
+   affects. An audit performed against a packet that moved under it proves
+   nothing.
 
 ## Audit Roles
 
@@ -73,9 +79,11 @@ records which role found each item.
 
 ## Stages
 
-1. **Freeze the artifact.** List the sources and the built PDF with timestamps
-   or hashes. State which numbers are frozen and where (result packet version,
-   CSV paths). An audit of a document that is still changing is not valid.
+1. **Freeze the artifact.** Write a hash manifest of the sources, the result
+   packet, and the built PDF. State which numbers are frozen and where (result
+   packet version, CSV paths). An audit of a document that is still changing is
+   not valid, so a frozen packet is a precondition, not a convenience. Re-run
+   the manifest at the end and diff it.
 2. **Recall the contract.** Re-read the problem statement and the internal
    contracts (`problem-contract.md`, `model-contract.md`, `evidence-ledger.md`,
    `ai-use-ledger.md`). Build the task-to-section-to-claim map before judging
@@ -104,6 +112,7 @@ records which role found each item.
 ```text
 AUDIT | <artifact and version> | <date> | read-only
 Coverage: <which of the required tasks are answered, and how>
+INTEGRITY: <manifest unchanged, or the files that changed and what it affects>
 
 FINDINGS
 B-1 | BLOCKER | <file:line> | <quoted text> | <evidence> | <minimum change>
@@ -132,3 +141,7 @@ NOT MODIFIED: <confirmation, or the exact list of unintended edits and their eff
   session can confirm.
 - Prompt tasks answered only in the letter, or only by assertion, with no
   model or result behind them.
+- A frozen result packet that was regenerated during the audit (a re-run of the
+  model script, an overwritten CSV, or a re-rendered figure), so the paper now
+  cites values the packet no longer produces. Treat the mismatch itself as the
+  finding and state which version the paper was written against.
