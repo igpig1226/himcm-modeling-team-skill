@@ -1,6 +1,6 @@
 ---
 name: himcm-modeling-team
-description: Coordinate a five-agent HiMCM paper workflow with two modelers, two writers, and a lead agent. Use when a user wants to work through a HiMCM problem from intake and research to modeling, LaTeX writing, figures, review, and revision. Require user dialogue before modeling and again before writing.
+description: Coordinate a five-agent HiMCM paper workflow with two modelers, two writers, and a lead agent. Use when a user wants to work through a HiMCM problem from intake and research to modeling, LaTeX writing, figures, review, and revision, or wants an existing HiMCM paper audited in read-only review mode. Require user dialogue before modeling and again before writing.
 ---
 
 # HiMCM Modeling Team
@@ -29,6 +29,20 @@ After the modeling checkpoint, assign writer A the method/problem/data sections 
 Keep both modeler identities and their model context available throughout writing. Writers send technical questions to the lead using `REVIEW`/`NEEDS_DECISION`; the lead promptly routes each question to the responsible modeler and relays the answered claim with its version. If concurrency is limited, leave a modeler idle and reactivate it for questions; "available" does not require all agents to sample continuously. Do not let a writer invent missing values, alter an equation, or settle a model contradiction in prose.
 
 Compile and inspect the paper, verify every task answer, claim, figure, citation, page/format limit, anonymity, and AI disclosure. Show a reviewable draft to the user and invite concrete corrections on the modeling, figures, English, and recommendations. Iterate through as many user review rounds as needed. After each substantive change, update affected result, figure, text, summary, and AI log versions together. Finish when the user accepts the deliverable or clearly ends the work; do not submit to COMAP on the user's behalf without a separate request.
+
+## Audit And Review Mode
+
+Triggered when the user asks to review, audit, check, or 审核/检查 an existing deliverable rather than build one. This mode runs the same five roles with the writing stage replaced by inspection: the output is a prioritized problem list, not a revised paper. Read [audit-and-review.md](references/audit-and-review.md) before dispatching.
+
+1. **Read-only, always.** No role edits the audited project: sources, CSVs, figures, or PDF. No script that writes into the project. If a build must be checked, build a scratch copy and say so.
+2. **Freeze and map first.** Record the version/hashes under audit, re-read the prompt and the internal contracts, and build the task-to-section-to-claim map before judging coverage.
+3. **Run all five roles** (waves are fine when concurrency is limited): the lead owns rules, page, anonymity, AI disclosure, and consolidation; modeler A audits the formulation against the code; modeler B independently recomputes the numbers and hunts inferential overreach; writer A audits method/data/notation traceability; writer B audits results, summary, letter, and poster against the packet.
+4. **Cross-review is mandatory** — writers check the other side's sections against the model, and modelers check figures, captions, and the poster against the frozen packet.
+5. **Verify sub-agent compliance.** Accept a reply as an audit result only if it carries the assigned TASK-ID, stays in scope, uses the required output shape, and stayed read-only. An off-brief reply or a self-directed edit is not an audit result: re-dispatch tighter, or run that role inline. Never fold a stray status update into the report.
+6. **Evidence and severity.** Every finding cites `file:line` plus a CSV row, code line, recomputation, or rule clause, and is graded BLOCKER / MAJOR / MINOR. Report only; fixing needs a separate user decision.
+7. **Lead verifies the minimum itself:** page count and its counted/uncounted split, headers and anonymity, AI disclosure placement and completeness, and the headline numbers reproduced from the frozen packet. A "no defect found" claim is issued only after that.
+
+Close an audit with the task-by-task coverage count, the findings ordered by severity, what was checked and found sound, and an explicit statement of what was or was not modified. If an unintended edit happened during the audit, name it and its side effects (page count, numbering, rebuild) rather than quietly keeping it.
 
 ## Operating Rules
 
