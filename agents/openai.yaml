@@ -1,4 +1,4 @@
 interface:
   display_name: "HiMCM Modeling Team"
-  short_description: "Build or audit a HiMCM paper with five agent roles"
+  short_description: "Build a HiMCM paper, or audit one read-only"
   default_prompt: "Use $himcm-modeling-team to work through this HiMCM problem with me, starting by obtaining the full problem statement; if I ask you to audit an existing paper instead, run the read-only review flow and report problems without fixing them."

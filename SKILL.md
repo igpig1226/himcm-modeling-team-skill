@@ -1,6 +1,6 @@
 ---
 name: himcm-modeling-team
-description: Coordinate a five-agent HiMCM paper workflow with two modelers, two writers, and a lead agent. Use when a user wants to work through a HiMCM problem from intake and research to modeling, LaTeX writing, figures, review, and revision, or wants an existing HiMCM paper audited in read-only review mode. Require user dialogue before modeling and again before writing.
+description: Coordinate a staged HiMCM paper workflow - five roles (lead, two modelers, two writers) for building, plus two audit-only roles (rigor and logic) for a seven-role read-only review. Use when a user wants to work through a HiMCM problem from intake and research to modeling, LaTeX writing, figures, review, and revision, or wants an existing HiMCM paper audited. Require user dialogue before modeling and again before writing.
 ---
 
 # HiMCM Modeling Team
@@ -30,19 +30,23 @@ Keep both modeler identities and their model context available throughout writin
 
 Compile and inspect the paper, verify every task answer, claim, figure, citation, page/format limit, anonymity, and AI disclosure. Show a reviewable draft to the user and invite concrete corrections on the modeling, figures, English, and recommendations. Iterate through as many user review rounds as needed. After each substantive change, update affected result, figure, text, summary, and AI log versions together. Finish when the user accepts the deliverable or clearly ends the work; do not submit to COMAP on the user's behalf without a separate request.
 
+For the final review round, the lead may reactivate the rigor and logic auditors for a targeted check: rigor on whether each claim is stated at the strength the evidence supports, logic on whether the recommendations follow from the results. This is a light version of audit mode, not a second full audit.
+
 ## Audit And Review Mode
 
-Triggered when the user asks to review, audit, check, or 审核/检查 an existing deliverable rather than build one. This mode runs the same five roles with the writing stage replaced by inspection: the output is a prioritized problem list, not a revised paper. Read [audit-and-review.md](references/audit-and-review.md) before dispatching.
+Triggered when the user asks to review, audit, check, or 审核/检查 an existing deliverable rather than build one. The team inspects instead of writing: seven logical roles — lead, modeler A, modeler B, rigor auditor, logic auditor, writer A, writer B. The output is a prioritized problem list, not a revised paper. Read [audit-and-review.md](references/audit-and-review.md) and [audit-briefs.md](references/audit-briefs.md) before dispatching.
 
 1. **Read-only, always.** No role edits the audited project: sources, CSVs, figures, or PDF. No script that writes into the project. If a build must be checked, build a scratch copy and say so.
-2. **Freeze and map first.** Record a hash manifest of the sources, result packet, and built PDF; re-read the prompt and the internal contracts; and build the task-to-section-to-claim map before judging coverage. Re-check the manifest before reporting: a packet that changed mid-audit is itself a finding.
-3. **Run all five roles** (waves are fine when concurrency is limited): the lead owns rules, page, anonymity, AI disclosure, and consolidation; modeler A audits the formulation against the code; modeler B independently recomputes the numbers and hunts inferential overreach; writer A audits method/data/notation traceability; writer B audits results, summary, letter, and poster against the packet. Auditors never run the project's own scripts; reproduce a number in a scratch copy instead.
-4. **Cross-review is mandatory** — writers check the other side's sections against the model, and modelers check figures, captions, and the poster against the frozen packet.
-5. **Verify sub-agent compliance.** Accept a reply as an audit result only if it carries the assigned TASK-ID, stays in scope, uses the required output shape, and stayed read-only. An off-brief reply or a self-directed edit is not an audit result: re-dispatch tighter, or run that role inline. Never fold a stray status update into the report.
-6. **Evidence and severity.** Every finding cites `file:line` plus a CSV row, code line, recomputation, or rule clause, and is graded BLOCKER / MAJOR / MINOR. Report only; fixing needs a separate user decision.
-7. **Lead verifies the minimum itself:** page count and its counted/uncounted split, headers and anonymity, AI disclosure placement and completeness, and the headline numbers reproduced from the frozen packet. A "no defect found" claim is issued only after that.
+2. **Name the version and freeze it.** Record a hash manifest of the sources, result packet, and built PDF. If another worker is editing the paper or the packet, audit a declared snapshot or decline — "the current head" is not a version.
+3. **Version-consistency gate before dispatching.** Extract every number the paper states and compare paper vs result packet vs contracts and ledgers. Report that mismatch table first: one version drift otherwise produces dozens of duplicate findings that bury the real ones.
+4. **Run the seven roles** (waves are fine when concurrency is limited), dispatching each with the matching brief in [audit-briefs.md](references/audit-briefs.md). The rigor role checks claim strength against evidence; the logic role checks that conclusions follow from their premises across section boundaries. Auditors never run the project's own scripts; reproduce a number in a scratch copy.
+5. **Follow the dispatch ladder.** A first off-brief reply is re-dispatched once with a tighter brief; a second miss is run inline by the lead and disclosed as `inline` in the report. Never fold a stray status update or a self-directed edit into the report.
+6. **Complete the cross-review matrix**, including the cells that produce no findings — silence is not a result.
+7. **Evidence, severity and impact.** Every finding cites `file:line` plus a CSV row, code line, recomputation, or rule clause, and carries one severity (BLOCKER / MAJOR / MINOR / INFO) and one or more impact tags (ELIGIBILITY / CONCLUSION / CREDIBILITY / PRESENTATION). INFO items are questions for the author, not defect claims. Report only; fixing needs a separate user decision.
+8. **Lead verifies the minimum itself:** page count and its counted/uncounted split, headers and anonymity, AI disclosure placement and completeness, version consistency, and the headline numbers reproduced from the frozen packet.
+9. **Re-audit after a fix pass.** A fix does not need the full seven roles: run the lead checklist, recompute the changed numbers, the writer who owns each touched section, and rigor or logic whenever a claim's strength or a conclusion moved. Name the skipped roles.
 
-Close an audit with the task-by-task coverage count, the findings ordered by severity, what was checked and found sound, and an explicit statement of what was or was not modified. If an unintended edit happened during the audit, name it and its side effects (page count, numbering, rebuild) rather than quietly keeping it.
+Close an audit with the task-by-task coverage count, the findings ordered by severity with impact tags, what was checked and found sound, and an explicit statement of what was or was not modified. Then use the audit-to-fix handoff in [audit-and-review.md](references/audit-and-review.md): every selected item gets an owner and an acceptance check, the artifacts are re-frozen, and re-audit is what proves the fix rather than the file having changed.
 
 ## Operating Rules
 

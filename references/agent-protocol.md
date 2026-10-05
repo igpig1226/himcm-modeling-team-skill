@@ -12,6 +12,14 @@ Read this before the first modeling dispatch and revisit it when writing starts.
 | Writer A | May prepare requirement map and outline; no results prose | Wait for approved model contract | Problem analysis, assumptions, data, notation, method and algorithm sections |
 | Writer B | May prepare a figure storyboard; no fabricated values | Wait for frozen result packet | Results, interpretation, limitations, recommendations, then Summary Sheet |
 
+Audit mode adds two audit-only roles to this table: a **rigor auditor** (claim
+strength against evidence: precision, uncertainty, units, like-for-like
+comparisons, claim-strength words) and a **logic auditor** (inference structure
+across section boundaries, contradictions, limitations that do not bound their
+conclusion). They are not part of the build flow, but the lead may reactivate
+both for the final review round before delivery. See
+[audit-and-review.md](audit-and-review.md) and [audit-briefs.md](audit-briefs.md).
+
 Do not dispatch writer A or B to draft substantive paper text until the user has approved the modeling checkpoint. Early outlines and figure plans may be prepared by the lead during preliminary analysis. If there are four concurrency slots including the lead, run at most three workers at once. During writing, keep both modelers' handles/context so they can be reactivated; suspend other workers as needed to answer a technical question promptly.
 
 ## Lead-Owned Contracts
