@@ -6,4 +6,6 @@ The skill also has a read-only **audit mode**. Ask it to 审核/检查/review an
 
 Invoke it with `$himcm-modeling-team` and provide a problem statement or PDF, or let it ask for one. The workflow uses the applicable contest's current rules and documents its AI use. R, Octave, and a local LaTeX toolchain are useful when the problem calls for computation, plots, and a PDF paper; the skill does not require both numerical languages for every problem.
 
-The skill files are in `SKILL.md` and `references/` (`rules-and-ai.md`, `agent-protocol.md`, `modeling-and-evidence.md`, `writing-and-visuals.md`, `audit-and-review.md`, `audit-briefs.md`). Install this directory under the Codex skills directory, usually `~/.codex/skills/himcm-modeling-team`.
+The writing stage has its own content standard: explicit task coverage (including both halves of "strengths and limitations"), claim-first paragraphs, a qualification budget that stops the paper from re-disclaiming in every paragraph, notation that is actually used by an equation, and point-of-use citations. The writers self-check against it before handoff, and the lead runs an integration check before the final review round.
+
+The skill files are in `SKILL.md` and `references/` (`rules-and-ai.md`, `agent-protocol.md`, `modeling-and-evidence.md`, `writing-and-visuals.md`, `writing-briefs.md`, `audit-and-review.md`, `audit-briefs.md`). Install this directory under the Codex skills directory, usually `~/.codex/skills/himcm-modeling-team`.

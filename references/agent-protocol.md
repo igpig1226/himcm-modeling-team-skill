@@ -12,6 +12,14 @@ Read this before the first modeling dispatch and revisit it when writing starts.
 | Writer A | May prepare requirement map and outline; no results prose | Wait for approved model contract | Problem analysis, assumptions, data, notation, method and algorithm sections |
 | Writer B | May prepare a figure storyboard; no fabricated values | Wait for frozen result packet | Results, interpretation, limitations, recommendations, then Summary Sheet |
 
+Both writers follow the content standard in
+[writing-and-visuals.md](writing-and-visuals.md) — explicit task coverage,
+claim-first paragraphs, a spent-once qualification budget, symbols that an
+equation actually uses, and point-of-use citations — and are dispatched with
+the matching brief in [writing-briefs.md](writing-briefs.md). Each writer
+reports its task list, number sources, qualifier count, symbols and citations
+before handoff; the lead then runs the integration check.
+
 Audit mode adds two audit-only roles to this table: a **rigor auditor** (claim
 strength against evidence: precision, uncertainty, units, like-for-like
 comparisons, claim-strength words) and a **logic auditor** (inference structure

@@ -24,7 +24,16 @@ Present the model, key assumptions, outputs, validation, alternative rejected, a
 
 ## Multi-Agent Writing And Revision
 
-After the modeling checkpoint, assign writer A the method/problem/data sections and writer B the results/discussion/recommendations, with the Summary Sheet drafted after the body. Both use the same approved model contract and result packet. Read [writing-and-visuals.md](references/writing-and-visuals.md). The lead owns the LaTeX root, shared notation, references, and final integration; each writer owns distinct section files.
+After the modeling checkpoint, assign writer A the method/problem/data sections and writer B the results/discussion/recommendations, with the Summary Sheet drafted after the body. Both use the same approved model contract and result packet. Read [writing-and-visuals.md](references/writing-and-visuals.md) and dispatch each writer with the matching brief in [writing-briefs.md](references/writing-briefs.md). The lead owns the LaTeX root, shared notation, references, and final integration; each writer owns distinct section files.
+
+The paper is scored on content, so the content rules are part of the dispatch:
+
+- **Task coverage is a contract.** Every required task gets an explicit answer in the body — a task answered only in the letter, only in a table, or only by assertion is not answered. Read the wording literally: "strengths and limitations", "unchanged and changed", "what data and how the metrics shift" each need both halves written. A task that cannot be fully answered with the evidence says so in one sentence and answers as far as it can.
+- **Every paragraph makes a claim.** Claim first, then the number, then the mechanism, then what it changes for the decision. No paragraph that only hedges or only restates a table.
+- **Spend the qualification budget once.** The full disclaimer appears where the reader first meets the assumptions and again in the limitations; everywhere else uses a short local qualifier. Each writer counts its qualifier occurrences before handoff and cuts the repeats; two "X, not Y" constructions in one paragraph is a rewrite signal.
+- **Notation and citations.** Every symbol must be used by an equation or a table column, defined with units at first use; every external fact or named place is cited at the point of use or explicitly labeled a planning label.
+
+Before handoff each writer reports the tasks it answered, every number with its source, its qualifier count and what was cut, the symbols introduced and where they are used, citations added, and anything unresolved. The lead then runs the integration check (one voice, one vocabulary, no duplicated disclaimers, no number without its conditions, task map complete, page budget met) before the final review round.
 
 Keep both modeler identities and their model context available throughout writing. Writers send technical questions to the lead using `REVIEW`/`NEEDS_DECISION`; the lead promptly routes each question to the responsible modeler and relays the answered claim with its version. If concurrency is limited, leave a modeler idle and reactivate it for questions; "available" does not require all agents to sample continuously. Do not let a writer invent missing values, alter an equation, or settle a model contradiction in prose.
 
