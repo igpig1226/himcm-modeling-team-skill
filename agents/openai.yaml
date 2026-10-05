@@ -1,0 +1,4 @@
+interface:
+  display_name: "HiMCM Modeling Team"
+  short_description: "Coordinate five agents through a HiMCM paper"
+  default_prompt: "Use $himcm-modeling-team to work through this HiMCM problem with me, starting by obtaining the full problem statement."
